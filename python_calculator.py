@@ -51,7 +51,7 @@ def adv_calculation(adv_function, num_prompt, num_prompt_2):
 
 #defining functions for BMI calculation
 def bmi_met():
-    height_met = float(input("Please enter your height in metres: "))
+    height_met = float(input("Please enter your height in centimetres: "))
     weight_met = float(input("Please enter your weight in kgs: "))
     bmi_met_res = (weight_met/(height_met*height_met))*10000
 
