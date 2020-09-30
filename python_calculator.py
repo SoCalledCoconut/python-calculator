@@ -1,14 +1,13 @@
 
-
 # defining functions and lists for BASIC choice
-user_functions = ["Add", "Multiply", "Divide", "Subtract"]
+user_functions = {1 : "Add", 2 : "Multiply", 3 : "Divide", 4 : "Subtract"}
 
 def basic_input():
     num_prompt = float(input("Please enter a number: "))
     num_prompt_2 = float(input("Please enter another number: "))
-    user_function = input("What woud you like to do? (Add/Multiply/Divide/Subtract) ")
-    if user_function in user_functions:
-        basic_calculation(user_function, num_prompt, num_prompt_2)
+    user_function = int(input("What woud you like to do?\n1:Add\n2:Multiply\n3:Divide\n4:Subtract\nEnter choice:"))
+    if 1 <= user_function <= 4:
+        basic_calculation( user_functions[user_function], num_prompt, num_prompt_2)
     else:
         print("I'm sorry, you've entered something incorrectly - try again!")
         return basic_input()
@@ -113,28 +112,28 @@ def trip_calc():
 #Calculator Selection
 
 def begin():
-    print("WELCOME TO THE PYTHON CALCULATOR\n\nYOUR SELECTIONS:\nBasic (+, -, *, /)\nAdvanced (power, square root)\nBMI\nMortgage\nTrip\n")
-    selection = input("What type of Calculator would you like to use? (NB: Case sensitive): ")
+    print("WELCOME TO THE PYTHON CALCULATOR\n\nYOUR SELECTIONS:\n1 - Basic (+, -, *, /)\n2 - Advanced (power, square root)\n3 - BMI\n4 - Mortgage\n5 - Trip\n")
+    selection = int(input("What type of Calculator would you like to use? (NB: Case sensitive): "))
 
-    if selection == "Basic":
+    if selection == 1:
         basic_input()
-    if selection == "Advanced":
+    if selection == 2:
         adv_input()
-    if selection == "BMI":
+    if selection == 3:
         imp_or_met = input("Do you prefer to use metric or imperial units? (Metric/Imperial): ")
         if imp_or_met == "Metric":
             bmi_met()
         elif imp_or_met == "Imperial":
             bmi_imp()
-    if selection == "Mortgage":
+    if selection == 4:
         mort_calc()
-    if selection == "Trip":
+    if selection == 5:
         trip_calc()
 
 begin()
 #restart calculator
-restart = input("Would you like to use the calculator again?\n1: Yes, 2: No\n")
-if restart == "1":
+restart = input("\nWould you like to use the calculator again? (Y/N):")
+if restart == 'Y'or 'y':
     begin()
 else:
     print("Thank you for using the calculator!")
