@@ -77,7 +77,7 @@ def bmi_imp():
         print("Your BMI is ", bmi_imp_res, " which is considered obese.")  
 
 
-# CALCULATING CALORIES - added only for imperial units
+# CALCULATING CALORIES - added only for metric units
 def calories(): 
     weight = float(input("Enter your weight(in kgs): "))
     height = float(input("Enter your height(in metres): "))
